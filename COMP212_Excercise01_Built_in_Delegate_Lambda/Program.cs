@@ -36,9 +36,13 @@ namespace COMP212_Excercise01_Built_in_Delegate_Lambda
             string result = smallestOfAll.Invoke("small", "smallest", "smallers");
             Console.WriteLine(result);
 
-            //the output will be 88
-        //    Action<int, int, int> AvgGrades = AvgGrade;
-        //    AvgGrades.Invoke(79, 90, 95);
+
+            Action<int, int, int> AvgGrades = (grade1, grade2, grade3)=>
+            {
+                int avgGrade = (grade1 + grade2 + grade3) / 3;
+                Console.WriteLine(avgGrade);
+            };
+            AvgGrades.Invoke(79, 90, 95);
         }
     }
 }
