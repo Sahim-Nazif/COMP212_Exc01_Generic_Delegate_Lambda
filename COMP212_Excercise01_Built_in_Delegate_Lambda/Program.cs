@@ -18,7 +18,27 @@ namespace COMP212_Excercise01_Built_in_Delegate_Lambda
     {
         static void Main(string[] args)
         {
-           
+            Func<string, string, string, string> smallestOfAll = (small, smallest, smallers) =>
+            {
+                if (small.Length > smallest.Length)
+                {
+                    return smallest;
+                }
+                else if (small.Length > smallers.Length)
+                {
+                    return smallers;
+                }
+                else
+                {
+                    return small;
+                }
+            };
+            string result = smallestOfAll.Invoke("small", "smallest", "smallers");
+            Console.WriteLine(result);
+
+            //the output will be 88
+        //    Action<int, int, int> AvgGrades = AvgGrade;
+        //    AvgGrades.Invoke(79, 90, 95);
         }
     }
 }
